@@ -1,0 +1,20 @@
+<Solution>
+  <Folder Name="/src/" />
+  <Folder Name="/src/Infrastructure/">
+    <Project Path="src/Infrastructure/Todo.Infra/Todo.Infra.csproj" />
+  </Folder>
+  <Folder Name="/src/Presentation/">
+    <Project Path="src/Presentation/Todo.Api/Todo.Api.csproj" />
+  </Folder>
+
+<Folder Name="/src/Domain/">
+  </Folder>
+
+
+<Folder Name="/src/Application/">
+
+  </Folder>
+
+
+
+</Solution>
