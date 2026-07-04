@@ -8,6 +8,12 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="10.0.9" />
+ <PackageReference Include="Microsoft.EntityFrameworkCore" Version="10.0.9" />
+ <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite.Core" Version="10.0.9" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Infrastructure\Todo.Infra\Todo.Infra.csproj" />
   </ItemGroup>
 
 </Project>
