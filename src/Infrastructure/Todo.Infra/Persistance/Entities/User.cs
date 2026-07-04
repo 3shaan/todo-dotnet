@@ -9,4 +9,6 @@ public class User : BaseAuditableEntity
 
     public required string Password { get; set; }
 
+    public ICollection<TodoList> TodoLists { get; set; } = [];
+
 }

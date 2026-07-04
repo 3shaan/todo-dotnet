@@ -10,4 +10,7 @@ public class TodoList : BaseAuditableEntity
 
     public User? User { get; set; }
 
+
+    public ICollection<TodoItemTag> TodoItems { get; set; } = [];
+
 }

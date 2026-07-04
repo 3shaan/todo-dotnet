@@ -6,4 +6,7 @@ public class Tags : BaseAuditableEntity
 
     public required string ColorCode { get; set; }
 
+
+    public ICollection<TodoItemTag> TodoItemTags { get; set; } = [];
+
 }

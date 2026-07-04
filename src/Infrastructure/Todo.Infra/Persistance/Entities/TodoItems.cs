@@ -25,5 +25,10 @@ public class TodoItems : BaseAuditableEntity
 
     public bool IsDeleted { get; set; } = false;
 
+    // todo items tags
+    public ICollection<TodoItemTag> TodoItemTags { get; set; } = [];
+
+    public ICollection<Comments> Comments { get; set; } = [];
+
 
 }
