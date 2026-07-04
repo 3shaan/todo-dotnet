@@ -10,7 +10,10 @@ public static class DependencyInjection
 
         var connectionString = configuration.GetConnectionString("TodoAppDB");
 
-        services.AddDbContext<TodoDbContext>(options => options.UseSqlite(connectionString));
+
+
+        // services.AddDbContext<TodoDbContext>(options => options.UseSqlite(connectionString));
+        services.AddSqlite<TodoDbContext>(connectionString);
 
 
         return services;
