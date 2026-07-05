@@ -1,20 +1,13 @@
 <Solution>
-  <Folder Name="/src/" />
+  <Folder Name="/src/"/>
   <Folder Name="/src/Infrastructure/">
-    <Project Path="src/Infrastructure/Todo.Infra/Todo.Infra.csproj" />
+    <Project Path="src/Infrastructure/Todo.Infra/Todo.Infra.csproj"/>
   </Folder>
   <Folder Name="/src/Presentation/">
-    <Project Path="src/Presentation/Todo.Api/Todo.Api.csproj" />
+    <Project Path="src/Presentation/Todo.Api/Todo.Api.csproj"/>
   </Folder>
-
-<Folder Name="/src/Domain/">
+  <Folder Name="/src/Domain/">
+    <Project Path="src/Domain/Todo.Domain/Todo.Domain.csproj"/>
   </Folder>
-
-
-<Folder Name="/src/Application/">
-
-  </Folder>
-
-
-
+  <Folder Name="/src/Application/"/>
 </Solution>
