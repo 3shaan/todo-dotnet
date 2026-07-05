@@ -11,6 +11,6 @@ public class TodoList : BaseAuditableEntity
     public User? User { get; set; }
 
 
-    public ICollection<TodoItemTag> TodoItems { get; set; } = [];
+    public ICollection<TodoItems> TodoItems { get; set; } = [];
 
 }
