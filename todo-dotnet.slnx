@@ -9,5 +9,7 @@
   <Folder Name="/src/Domain/">
     <Project Path="src/Domain/Todo.Domain/Todo.Domain.csproj"/>
   </Folder>
-  <Folder Name="/src/Application/"/>
+  <Folder Name="/src/Application/">
+    <Project Path="src/Application/Todo.Application/Todo.Application.csproj"/>
+  </Folder>
 </Solution>

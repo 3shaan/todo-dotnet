@@ -1,6 +1,8 @@
 using Mapster;
 using MapsterMapper;
 using Microsoft.EntityFrameworkCore;
+using Todo.Application.Contracts;
+using Todo.Application.Implementation;
 using Todo.Infra.Persistance.Entities;
 
 namespace Todo.Api;
@@ -21,6 +23,14 @@ public static class DependencyInjection
         services.AddSingleton(TypeAdapterConfig.GlobalSettings);
         services.AddScoped<IMapper, ServiceMapper>();
 
+
+        return services;
+
+    }
+
+    public static IServiceCollection AddApplication(this IServiceCollection services)
+    {
+        services.AddScoped<IUserService, UserService>();
 
         return services;
 
