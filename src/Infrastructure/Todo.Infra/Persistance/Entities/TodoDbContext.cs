@@ -10,7 +10,7 @@ public class TodoDbContext(DbContextOptions<TodoDbContext> options) : DbContext(
         base.OnModelCreating(modelBuilder);
         new UserConfiguration().Configure(modelBuilder.Entity<User>());
 
-        modelBuilder.Entity<TodoList>().HasOne(x => x.User).WithMany().HasForeignKey(x => x.UserId).OnDelete(DeleteBehavior.NoAction);
+        modelBuilder.Entity<TodoList>().HasOne(x => x.User).WithMany(x => x.TodoLists).HasForeignKey(x => x.UserId).OnDelete(DeleteBehavior.NoAction);
 
         modelBuilder.Entity<TodoItems>().HasOne(x => x.TodoList).WithMany(x => x.TodoItems).HasForeignKey(x => x.TodoListId).OnDelete(DeleteBehavior.Cascade);
 

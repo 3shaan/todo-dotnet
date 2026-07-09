@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Todo.Infra.Persistance.Entities;
 
@@ -10,9 +11,11 @@ using Todo.Infra.Persistance.Entities;
 namespace Todo.Infra.Migrations
 {
     [DbContext(typeof(TodoDbContext))]
-    partial class TodoDbContextModelSnapshot : ModelSnapshot
+    [Migration("20260709104502_CreatedByNull")]
+    partial class CreatedByNull
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "10.0.9");
@@ -241,9 +244,14 @@ namespace Todo.Infra.Migrations
                     b.Property<Guid>("UserId")
                         .HasColumnType("TEXT");
 
+                    b.Property<Guid?>("UserId1")
+                        .HasColumnType("TEXT");
+
                     b.HasKey("Id");
 
                     b.HasIndex("UserId");
+
+                    b.HasIndex("UserId1");
 
                     b.ToTable("TodoLists");
                 });
@@ -338,10 +346,14 @@ namespace Todo.Infra.Migrations
             modelBuilder.Entity("Todo.Infra.Persistance.Entities.TodoList", b =>
                 {
                     b.HasOne("Todo.Infra.Persistance.Entities.User", "User")
-                        .WithMany("TodoLists")
+                        .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
+
+                    b.HasOne("Todo.Infra.Persistance.Entities.User", null)
+                        .WithMany("TodoLists")
+                        .HasForeignKey("UserId1");
 
                     b.Navigation("User");
                 });

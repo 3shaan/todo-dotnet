@@ -6,7 +6,7 @@ public class BaseAuditableEntity : BaseEntity
 
     public DateTime? UpdateAt { get; set; } = null;
 
-    public required string CreatedBy { get; set; }
+    public string CreatedBy { get; set; } = string.Empty;
 
     public string? UpdatedBy { get; set; } = null;
 
