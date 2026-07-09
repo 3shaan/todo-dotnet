@@ -1,3 +1,5 @@
+using Mapster;
+using MapsterMapper;
 using Microsoft.EntityFrameworkCore;
 using Todo.Infra.Persistance.Entities;
 
@@ -14,6 +16,10 @@ public static class DependencyInjection
 
         // services.AddDbContext<TodoDbContext>(options => options.UseSqlite(connectionString));
         services.AddSqlite<TodoDbContext>(connectionString);
+
+        // add mapster
+        services.AddSingleton(TypeAdapterConfig.GlobalSettings);
+        services.AddScoped<IMapper, ServiceMapper>();
 
 
         return services;
